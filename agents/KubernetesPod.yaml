@@ -1,0 +1,39 @@
+spec:
+  containers:
+  - name: jnlp
+    image: jenkins/inbound-agent
+    env:
+    - name: GIT_SSL_NO_VERIFY
+      value: true
+  - name: dtd2
+    image: tso-common-docker-dev.cfar.nsapps.dcn/cicd/docker-slave:1.0.6
+    resources:
+      limits:
+        cpu: '1'
+        memory: 3Gi
+      requests:
+        cpu: '1'
+        memory: 1Gi
+    env:
+    - name: JAVA_TOOL_OPTIONS
+      value: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true
+    command:
+    - cat
+    tty: true
+  - name: fortify
+    image: itso-sed-docker.cfar.nsapps.dcn/fortify/tso:21.2.3.5
+    command:
+    - cat
+    tty: true
+    resources:
+      limits:
+        cpu: '2'
+        memory: '7Gi'
+      requests:
+        cpu: '1'
+        memory: '5Gi'
+  - name: alpine-jq
+    image: tsord-docker-dev.cfar.nsapps.dcn/tso/alpine-jq:1.0.0
+    command:
+    - cat
+    tty: true

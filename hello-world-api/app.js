@@ -4,6 +4,11 @@ const app = express()
 const port = 3200
 app.use(express.static('public'))
 
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}));
+
 app.get('/languages', (req, res) => {
   const resp = languages()
   res.send(resp)

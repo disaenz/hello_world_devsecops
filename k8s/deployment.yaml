@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-world-api
+  name: hello-world-api
+  namespace: devsecops-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-api
+  template:
+    metadata:
+      labels:
+        app: hello-world-api
+    spec:
+      containers:
+      - image: tso-exercise-docker-dev.cfar.nsapps.dcn/devsecops/hello-world-api:latest
+        name: hello-world-api
+        ports:
+        - containerPort: 3200
+        resources:
+          limits:
+            cpu: '4'
+            memory: 5Gi
+          requests:
+            cpu: '2'
+            memory: 2Gi
