@@ -11,6 +11,7 @@ pipeline
         stage('Initial Notification Process'){
             steps{
                 echo 'Starting Pipeline'
+                sh 'cd hello-world-api'
                 sh 'chmod +x scripts/*'
             }
 
