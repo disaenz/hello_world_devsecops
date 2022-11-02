@@ -7,39 +7,28 @@ import getLanguages from "./getLanguages";
 function App() {
   const [languages, setLanguage] = useState([]);
   const [found, setFound] = useState({});
- 
-  useEffect(() => {
-    console.log("Inside useEffect");
+  const [myColor, setColor] = useState("black");
 
+  useEffect(() => {
     let data = null;
     const fetchData = async () => {
       data = await getLanguages();
-      console.log("API returned this: ", data);
       setLanguage(data);
     };
-
     // call the function
     fetchData();
-    // make
   }, []);
 
   const onChange = (e) => {
-    //setLanguage(e.target.value);
-    console.log("Inside onchnge ", languages);
-    console.log("what type is this", typeof(languages));
-
-    // const filtered = languages.filter(
-    //   (l) => l.name.toLowerCase() === e.target.value
-    // );
-    // console.log(filtered);
     const found = languages.find((l) => {
       console.log(l);
       return l.name.toLowerCase() === e.target.value;
     });
-    console.log("Inside onchnge found : ", found);
-
     setFound(found);
-    console.log("Test selection, " + e.target.value);
+  };
+
+  const onChangeColor = (e) => {
+    setColor(e.target.value);
   };
 
   return (
@@ -47,9 +36,14 @@ function App() {
       <header>
         <h1>Welcome Cesar to the Hello World Application</h1>
         <p>
-          <h3 style={{ fontSize: 64 }}>{found.content}</h3>
+          <h3 style={{ fontSize: 64, color: myColor }}>{found.content}</h3>
           <br></br>
-          <select type="button" class="btn btn-primary" onChange={onChange}>
+          <select
+            type="button"
+            class="btn btn-primary"
+            style={{ width: "200px" }}
+            onChange={onChange}
+          >
             <option default value="english">
               English
             </option>
@@ -59,6 +53,26 @@ function App() {
             <option value="latin">Latin</option>
             <option value="mandarin">Mandatrin</option>
             <option value="arabic">Arabic</option>
+            <option value="hindi">Hindi</option>
+
+          </select>
+
+          <select
+            type="button"
+            class="btn btn-primary"
+            style={{ width: "200px" }}
+            onChange={onChangeColor}
+          >
+            <option default value="black">
+              black
+            </option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="Purple">Purple</option>
+            <option value="brown">Brown</option>
+            <option value="yellowgreen">Yellowgreen</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="pink">Pink</option>
           </select>
         </p>
       </header>

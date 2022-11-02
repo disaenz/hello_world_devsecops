@@ -1,0 +1,39 @@
+pipeline
+{
+    agent any
+
+    options {
+        skipStagesAfterUnstable()
+    }
+
+    stages {
+
+        stage('Initial Notification Process'){
+            steps{
+                echo 'Starting Pipeline'
+                sh 'chmod +x scripts/*'
+            }
+
+        }
+
+        stage('Login to Docker Hub'){
+            steps{
+                sh "sh scripts/docker-login.sh"
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps{
+                sh "sh scripts/build-docker-image.sh"
+            }
+        }
+
+    /*
+        stage('Push Docker Image to Docker Hub') {
+            steps{
+                sh "sh scripts/docker-push.sh"
+            }
+        }
+    }
+    */
+}
