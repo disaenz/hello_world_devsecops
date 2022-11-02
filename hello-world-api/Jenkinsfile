@@ -11,25 +11,20 @@ pipeline
         stage('Initial Notification Process'){
             steps{
                 echo 'Starting Pipeline'
-                sh 'pwd'
-                sh 'cd hello-world-api'
-                sh 'pwd'
-                sh 'ls -la'
-                sh 'chmod +x scripts/*'
+                sh 'chmod +x hello-world-api/scripts/*'
             }
-
         }
 
         stage('Login to Docker Hub'){
             steps{
                 sh 'pwd'
-                sh "sh scripts/docker-login.sh"
+                sh "sh hello-world-api/scripts/docker-login.sh"
             }
         }
 
         stage('Build Docker Image') {
             steps{
-                sh "sh scripts/build-docker-image.sh"
+                sh "sh hello-world-api/scripts/build-docker-image.sh"
             }
         }
 
