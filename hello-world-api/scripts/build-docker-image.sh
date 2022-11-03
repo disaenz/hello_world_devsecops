@@ -1,5 +1,7 @@
 #!/bin/bash
 set -x
 
-docker build -t hello-world-api:latest -f hello-world-api/Dockerfile .
+cd hello-world-api
+pwd
+docker build -t hello-world-api:latest .
 docker images
