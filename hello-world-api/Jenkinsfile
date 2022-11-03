@@ -28,13 +28,10 @@ pipeline
             }
         }
 
-    /*
         stage('Push Docker Image to Docker Hub') {
             steps{
-                sh "sh scripts/docker-push.sh"
+                sh "sh hello-world-api/scripts/docker-push.sh"
             }
         }
-    }
-    */
-    }   
+    }  
 }
