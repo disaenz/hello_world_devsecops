@@ -1,13 +1,13 @@
 services:
 
   dashboard-api:
-    image: hello-world-api:latest
+    image: disaenz2/hello-world-api:latest
     container_name: hello-world-api
     ports:
       - 3200:3200
-    build:
-      context: ./hello-world-api
-      dockerfile: Dockerfile
+    #build:
+      #context: ./hello-world-api
+      #dockerfile: Dockerfile
   dashboard-app:
     image: hello-world-app:latest
     container_name: hello-world-app
