@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import "./getLanguages";
@@ -34,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Welcome Cesar to the Hello World Application</h1>
+        <h1>DevOps Demo</h1>
         <p>
           <h3 style={{ fontSize: 64, color: myColor }}>{found.content}</h3>
           <br></br>
