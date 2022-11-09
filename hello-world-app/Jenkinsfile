@@ -18,6 +18,7 @@ pipeline
         stage('Scanning for Vulnerabilities'){
             steps{
                 sh "echo \"Look Ma, everything is ok\""
+                sh "return 1"
             }
         }
 
