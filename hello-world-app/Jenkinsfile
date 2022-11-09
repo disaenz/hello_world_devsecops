@@ -1,0 +1,42 @@
+pipeline
+{
+    agent any
+
+    options {
+        skipStagesAfterUnstable()
+    }
+
+    stages {
+
+        stage('Initial Setup Process'){
+            steps{
+                echo 'Starting Pipeline'
+                sh 'chmod +x hello-world-app/scripts/*'
+            }
+        }
+
+        stage('Login to Docker Hub'){
+            steps{
+                sh "sh hello-world-app/scripts/docker-login.sh"
+            }
+        }
+
+        stage('Compile Application and Build Docker Image') {
+            steps{
+                sh "sh hello-world-app/scripts/build-docker-image.sh"
+            }
+        }
+
+        stage('Push Docker Image to Docker Hub') {
+            steps{
+                sh "sh hello-world-app/scripts/docker-push.sh"
+            }
+        }
+
+        stage('Deploy to Server') {
+            steps{
+                sh "echo \"I'm Deployed, Happy Ending!\""
+            }
+        }
+    }  
+}
