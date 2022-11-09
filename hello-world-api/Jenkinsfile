@@ -21,7 +21,7 @@ pipeline
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Compile Application and Build Docker Image') {
             steps{
                 sh "sh hello-world-api/scripts/build-docker-image.sh"
             }
@@ -30,6 +30,12 @@ pipeline
         stage('Push Docker Image to Docker Hub') {
             steps{
                 sh "sh hello-world-api/scripts/docker-push.sh"
+            }
+        }
+
+        stage('Deploy to Server') {
+            steps{
+                sh "echo \"I'm Deployed, Happy Ending!\""
             }
         }
     }  
