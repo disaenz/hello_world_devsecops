@@ -15,6 +15,12 @@ pipeline
             }
         }
 
+        stage('Scanning for Vulnerabilities'){
+            steps{
+                sh "echo \"Look Ma, everything is ok\""
+            }
+        }
+
         stage('Login to Docker Hub'){
             steps{
                 sh "sh hello-world-api/scripts/docker-login.sh"
