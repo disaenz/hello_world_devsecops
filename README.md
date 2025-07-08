@@ -57,6 +57,8 @@ The project includes a containerized frontend and backend, Jenkins pipelines, an
 * Kubernetes manifests for deployment, service, and routing
 * GitHub for version control and code review
 
+---
+
 ## 🤝 Credits & Acknowledgements
 
 This project was presented voluntarily by:
