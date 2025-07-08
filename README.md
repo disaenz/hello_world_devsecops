@@ -2,7 +2,6 @@
 
 Welcome to **Hello World DevSecOps**, a collaborative proof-of-concept built and presented for El Paso Community College (EPCC) in November 2022.
 
----
 
 ## 🚀 Project Overview
 
@@ -14,7 +13,6 @@ This repository demonstrates secure, automated CI/CD for a cloud-native applicat
 
 The project includes a containerized frontend and backend, Jenkins pipelines, and Kubernetes deployment manifests.
 
----
 
 ## 🛠️ Technologies Used
 
@@ -25,7 +23,6 @@ The project includes a containerized frontend and backend, Jenkins pipelines, an
 - **Orchestration**: Kubernetes (K8s) with YAML manifests
 - **Security**: Mocked Security Steps in Jenkins Pipeline
 
----
 
 ## ⚡ Getting Started (Local)
 
@@ -47,7 +44,6 @@ The project includes a containerized frontend and backend, Jenkins pipelines, an
     * app: http://localhost:4000
     * api: http://localhost:3200
 
----
 
 ## 🚦 CI/CD & DevSecOps Highlights
 
@@ -57,7 +53,6 @@ The project includes a containerized frontend and backend, Jenkins pipelines, an
 * Kubernetes manifests for deployment, service, and routing
 * GitHub for version control and code review
 
----
 
 ## 🤝 Credits & Acknowledgements
 
@@ -71,8 +66,6 @@ This project was presented voluntarily by:
 
 Special thanks to [Professor Cristian Servin, PH.D](https://www.christianservin.com) and to [El Paso Community College (EPCC)](https://www.epcc.edu)
 for giving us the opportunity to showcase DevSecOps practices and inspire the next generation of cloud and security engineers!
-
----
 
 ## 📜 License
 
