@@ -1,5 +1,8 @@
 # Hello World DevSecOps (EPCC Proof of Concept)
 
+> **Note:**  
+> This project is a proof-of-concept created for educational purposes. It is not actively maintained and is **not deployed or available as a live service**.
+
 Welcome to **Hello World DevSecOps**, a collaborative proof-of-concept built and presented for El Paso Community College (EPCC) in November 2022.
 
 
