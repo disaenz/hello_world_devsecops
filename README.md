@@ -69,3 +69,9 @@ This project was presented voluntarily by:
 
 Special thanks to [Professor Cristian Servin, PH.D](https://www.christianservin.com) and to [El Paso Community College (EPCC)](https://www.epcc.edu)
 for giving us the opportunity to showcase DevSecOps practices and inspire the next generation of cloud and security engineers!
+
+---
+
+## 📜 License
+
+This project is open source under the [MIT License](./license.md) and is intended for educational and demonstration purposes.
